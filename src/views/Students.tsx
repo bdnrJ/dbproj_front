@@ -1,8 +1,25 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Popup from '../components/Popup'
 import AddStudent from '../Formy/AddStudent'
+import axios from 'axios';
 
 const Students = () => {
+
+  const [students, setStudents] = useState([]);
+
+  useEffect(() => {
+    const fetchStudents = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/students');
+        setStudents(response.data);
+      } catch (err) {
+        console.error('Error fetching students:', err);
+      }
+    };
+
+    fetchStudents();
+  }, []);
+
   return (
 <section className="min-h-screen bg-slate-800 font-sans text-center">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
@@ -43,41 +60,25 @@ const Students = () => {
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
-                Email
-              </th>
-              <th scope="col" className="px-6 py-3">
-                First Name
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Last Name
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Specialization
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Phone Number
-              </th>
+            <th scope="col" className="px-6 py-3">Email</th>
+                  <th scope="col" className="px-6 py-3">First Name</th>
+                  <th scope="col" className="px-6 py-3">Last Name</th>
+                  <th scope="col" className="px-6 py-3">Date of Birth</th>
+                  <th scope="col" className="px-6 py-3">Phone Number</th>
+                  <th scope="col" className="px-6 py-3">Address</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              
-              </td>
-              <td className="px-6 py-4">
-   
-              </td>
-              <td className="px-6 py-4">
-          
-              </td>
-              <td className="px-6 py-4">
-           
-              </td>
-              <td className="px-6 py-4">
-           
-              </td>
-            </tr>
+          {students.map((student, index) => (
+                  <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{student.email}</td>
+                    <td className="px-6 py-4">{student.firstName}</td>
+                    <td className="px-6 py-4">{student.lastName}</td>
+                    <td className="px-6 py-4">{student.dateOfBirth}</td>
+                    <td className="px-6 py-4">{student.phoneNumber}</td>
+                    <td className="px-6 py-4">{student.address}</td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>
