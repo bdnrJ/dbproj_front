@@ -1,33 +1,58 @@
 import { useState } from 'react'
+import {createBrowserRouter, RouterProvider, ScrollRestoration} from "react-router-dom";
 import './App.css'
 import axios from 'axios';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import { Outlet } from 'react-router-dom';
+import Home from './views/Home';
+import Students from './views/Students';
 
-function App() {
-  const [test, setTest] = useState<any>();
-
-  const todayLessons = async () => {
-      try{
-        const response = await axios.get('http://localhost:8080/api/students/today_lessons');
-        console.log(response);
-        setTest(response.data)
-      }catch(err: any){
-        console.log(err);
-      }
-  }
-
+export const Layout = () => {
   return (
-    <>
-      <div>
-        <button onClick={todayLessons} >Students with lessons today</button>
-        <ul>
-          {test.map((gowno: any) => (
-            <li>{gowno.firstName + " " + gowno.lastName}</li>
-          ))}
-        </ul>
-        <button onClick={() => console.log(test)} >log</button>
-      </div>
-    </>
+          <div className="layout">
+              <Navbar/>
+              <Outlet />
+              <Footer />
+          </div>
   )
+}
+
+const router = createBrowserRouter([
+  {
+      path: "/",
+      element: <Layout />,
+      children: [
+          {
+              path: "/",
+              element: <Home />
+          },
+      ]
+  },
+  {
+      path: "/students",
+      element:  <Students />
+  },
+]);
+
+  // const [test, setTest] = useState<any>();
+
+  // const todayLessons = async () => {
+  //     try{
+  //       const response = await axios.get('http://localhost:8080/api/students/today_lessons');
+  //       console.log(response);
+  //       setTest(response.data)
+  //     }catch(err: any){
+  //       console.log(err);
+  //     }
+  // }
+
+  function App() {
+    return (
+        <div className="App">
+            <RouterProvider router={router} />
+        </div>
+    )
 }
 
 export default App
