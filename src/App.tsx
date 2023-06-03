@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import Home from './views/Home';
 import Students from './views/Students';
+import Vehicle from './views/vehicle';
 
 export const Layout = () => {
   return (
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       path: "/students",
       element:  <Students />
   },
+  {
+    path: "/vehicle",
+    element:  <Vehicle/>
+    },
 ]);
 
   // const [test, setTest] = useState<any>();
