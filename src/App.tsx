@@ -45,10 +45,11 @@ const router = createBrowserRouter([
             {
                 path: "/instructors",
                 element: <Instructors />
+
             },
         ]
     },
-]);
+]); 
 
 // const [test, setTest] = useState<any>();
 
