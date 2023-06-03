@@ -20,25 +20,25 @@ export const Layout = () => {
 }
 
 const router = createBrowserRouter([
-  {
-      path: "/",
-      element: <Layout />,
-      children: [
-          {
-              path: "/",
-              element: <Home />
-          },
-      ]
-  },
-  {
-      path: "/students",
-      element:  <Students />
-  },
-  {
-    path: "/vehicle",
-    element:  <Vehicle/>
+    {
+        path: "/",
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <Home />
+            },
+            {
+                path: "/students",
+                element: <Students />
+            },
+            {
+                path: "/vehicle",
+            //    element: <Vehicles />
+            },
+        ]
     },
-]);
+]); 
 
   // const [test, setTest] = useState<any>();
 

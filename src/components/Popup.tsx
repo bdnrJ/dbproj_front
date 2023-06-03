@@ -14,7 +14,7 @@ const Popup: React.FC<PopupProps> = ({ children, buttonText }) => {
 
   return (
     <>
-      <button onClick={openPopup} className="px-4 py-2 bg-blue-500 text-white rounded">{buttonText}</button>
+      <button onClick={openPopup} className="px-4 py-2 bg-blue-500 text-white rounded mt-10">{buttonText}</button>
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-black opacity-50 absolute inset-0" onClick={closePopup}></div>
