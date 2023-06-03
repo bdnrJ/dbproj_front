@@ -1,8 +1,15 @@
 import React from 'react'
+import Popup from '../components/Popup'
 
 const Students = () => {
   return (
-    <div>Students</div>
+    <div className="">
+      <Popup buttonText="Add student">
+        <form action="">
+          <input type="text" placeholder='name' />
+        </form>
+      </Popup>
+    </div>
   )
 }
 
