@@ -1,13 +1,12 @@
 import React from 'react'
 import Popup from '../components/Popup'
+import AddStudent from '../Formy/AddStudent'
 
 const Students = () => {
   return (
     <div className="">
       <Popup buttonText="Add student">
-        <form action="">
-          <input type="text" placeholder='name' />
-        </form>
+        <AddStudent />
       </Popup>
     </div>
   )
