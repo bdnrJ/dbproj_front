@@ -19,6 +19,14 @@ import CourseTodayLesson from './views/Courser/CourseTodayLesson';
 import InstructorsBirthday from './views/Instructors/InstructorsBirthday';
 import InstructorsMaxLesson from './views/Instructors/InstructorsMaxLesson';
 import Lesson from './views/Lessons/Lessons';
+import LessonsUpcoming from './views/Lessons/LessonsUpcoming';
+import LessonsToday from './views/Lessons/LessonsToday';
+import Tests from './views/Tests/tests';
+import Passed from './views/Tests/passed';
+import AvrageTest from './views/Tests/AvrageTest';
+import Active from './views/vechicleAssignment/Active';
+import Assigment from './views/vechicleAssignment/Assigment';
+import Inactive from './views/vechicleAssignment/Inactive';
 export const Layout = () => {
     return (
         <div className="layout">
@@ -92,6 +100,46 @@ const router = createBrowserRouter([
             {
                 path: "/lessons",
                 element: <Lesson />
+
+            },
+            {
+                path: "/LessonsToday",
+                element: <LessonsToday />
+
+            },
+            {
+                path: "/LessonsUpcoming",
+                element: <LessonsUpcoming />
+
+            },
+            {
+                path: "/AvrageTest",
+                element: <AvrageTest />
+
+            },
+            {
+                path: "/passed",
+                element: <Passed/>
+
+            },
+            {
+                path: "/Tests",
+                element: <Tests />
+
+            },
+            {
+                path: "/Active",
+                element: <Active />
+
+            },
+            {
+                path: "/Assigment",
+                element: <Assigment />
+
+            },
+            {
+                path: "/Inactive",
+                element: <Inactive />
 
             },
         ]

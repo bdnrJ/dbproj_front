@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Popup from '../../components/Popup'
 import AddVehicle from '../../Formy/AddVehicle'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 const Vehicles = () => {
 
     const [vehicles, setVehicles] = useState([]);
@@ -40,25 +41,35 @@ const Vehicles = () => {
 <div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
     <ul className="space-y-2">
 
-        <li>
-            <a href="/Vehicles" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">Vehicles</span>
-            </a>
-        </li>
-        <li>
-            <a href="/Maintenance" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">Maintenance</span>
-            </a>
-        </li>
+    <li>
+  <Link to="/Vehicles" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+    <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+    </svg>
+    <span className="ml-3">Vehicles</span>
+  </Link>
+</li>
 
-        <li>
-            <a href="/Assigned" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">Assigned</span>
-            </a>
-        </li>
+<li>
+  <Link to="/Maintenance" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+    <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+    </svg>
+    <span className="ml-3">Maintenance</span>
+  </Link>
+</li>
+
+<li>
+  <Link to="/Assigned" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+    <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+      <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+    </svg>
+    <span className="ml-3">Assigned</span>
+  </Link>
+</li>
 
     </ul>
 
@@ -72,24 +83,32 @@ const Vehicles = () => {
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-            <th scope="col" className="px-6 py-3">Email</th>
-                  <th scope="col" className="px-6 py-3">First Name</th>
-                  <th scope="col" className="px-6 py-3">Last Name</th>
-                  <th scope="col" className="px-6 py-3">Date of Birth</th>
-                  <th scope="col" className="px-6 py-3">Phone Number</th>
-                  <th scope="col" className="px-6 py-3">Address</th>
+                  <th scope="col" className="px-6 py-3">color</th>
+                  <th scope="col" className="px-6 py-3">license plate</th>
+                  <th scope="col" className="px-6 py-3">maintenance date</th>
+                  <th scope="col" className="px-6 py-3">make </th>
+                  <th scope="col" className="px-6 py-3">model </th>
+                  <th scope="col" className="px-6 py-3">registration_date </th>
+                  <th scope="col" className="px-6 py-3">year</th>
             </tr>
           </thead>
           <tbody>
-         
+             {vehicles.map((vehicles, index) => (
+                  <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{vehicles.color}</td>
+                    <td className="px-6 py-4">{vehicles.license_plate}</td>
+                    <td className="px-6 py-4">{vehicles.maintenance_date}</td>
+                    <td className="px-6 py-4">{vehicles.make}</td>
+                    <td className="px-6 py-4">{vehicles.model}</td>
+                    <td className="px-6 py-4">{vehicles.registration_date}</td>
+                    <td className="px-6 py-4">{vehicles.year}</td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>
-
-    </div>
-  </div>
-
-
+      </div>
+      </div>
 </section>
         </div>
     )
