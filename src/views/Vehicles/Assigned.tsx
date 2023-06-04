@@ -93,14 +93,14 @@ const Vehicles = () => {
             </tr>
           </thead>
           <tbody>
-          {vehicles.map((vehicles, index) => (
+          {vehicles[0] && vehicles.map((vehicles, index) => (
                   <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{vehicles.color}</td>
-                    <td className="px-6 py-4">{vehicles.license_plate}</td>
-                    <td className="px-6 py-4">{vehicles.maintenance_date}</td>
+                    <td className="px-6 py-4">{vehicles.licensePlate}</td>
+                    <td className="px-6 py-4">{vehicles.maintenanceDate}</td>
                     <td className="px-6 py-4">{vehicles.make}</td>
                     <td className="px-6 py-4">{vehicles.model}</td>
-                    <td className="px-6 py-4">{vehicles.registration_date}</td>
+                    <td className="px-6 py-4">{vehicles.registrationDate}</td>
                     <td className="px-6 py-4">{vehicles.year}</td>
                   </tr>
                 ))}

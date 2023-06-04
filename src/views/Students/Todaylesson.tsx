@@ -89,7 +89,7 @@ const Students = () => {
             </tr>
           </thead>
           <tbody>
-          {students.map((student, index) => (
+          {students[0] && students.map((student, index) => (
                   <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{student.email}</td>
                     <td className="px-6 py-4">{student.firstName}</td>
