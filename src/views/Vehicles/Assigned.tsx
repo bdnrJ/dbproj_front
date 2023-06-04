@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Popup from '../components/Popup'
-import AddVehicle from '../Formy/AddVehicle'
+import Popup from '../../components/Popup'
+import AddVehicle from '../../Formy/AddVehicle'
 import axios from 'axios';
 const Vehicles = () => {
 
@@ -9,7 +9,7 @@ const Vehicles = () => {
     useEffect(() => {
         const fetchVehicles = async () => {
           try {
-            const response = await axios.get('http://localhost:8080/api/vehicles');
+            const response = await axios.get('http://localhost:8080/api/vehicles/assigned');
             setVehicles(response.data);
           } catch (err) {
             console.error('Error fetching students:', err);
