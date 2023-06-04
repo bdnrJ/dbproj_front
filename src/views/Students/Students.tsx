@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import Popup from '../components/Popup'
-import AddStudent from '../Formy/AddStudent'
+import Popup from '../../components/Popup'
+import AddStudent from '../../Formy/AddStudent'
 import axios from 'axios';
 
 
@@ -36,7 +36,7 @@ const Students = () => {
 <div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
 <ul className="space-y-2">
         <li>
-          <Popup buttonText="Add Vehicle">
+          <Popup buttonText="Add Student">
                 <AddStudent />
             </Popup>
         </li>
