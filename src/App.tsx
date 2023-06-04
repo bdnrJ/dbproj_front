@@ -7,13 +7,13 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import Home from './views/Home';
 import Students from './views/Students/Students';
-import Vehicles from './views/Vehicles';
+import Vehicles from './views/Vehicles/Vehicles';
 import Courses from './views/Courses';
 import Instructors from './views/Instructors';
-import Todaylesson from './views/Todaylesson';
-import StudentsWhoStartedInYear from './views/StudentsWhoStartedInYear';
-import Assigned from './views/Assigned';
-import Maintenance from './views/Maintenance';
+import Todaylesson from './views/Students/Todaylesson';
+import StudentsWhoStartedInYear from './views/Students/StudentsWhoStartedInYear';
+import Assigned from './views/Vehicles/Assigned';
+import Maintenance from './views/Vehicles/Maintenance';
 import CoursesMaxLesson from './views/CoursesMaxLesson';
 import CourseTodayLesson from './views/CourseTodayLesson';
 export const Layout = () => {
