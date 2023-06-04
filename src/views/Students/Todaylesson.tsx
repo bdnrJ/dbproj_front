@@ -11,6 +11,7 @@ const Students = () => {
     const fetchStudents = async () => {
       try {
         const response = await axios.get('http://localhost:8080/api/students/today_lessons');
+        console.log(response);
         setStudents(response.data);
       } catch (err) {
         console.error('Error fetching students:', err);

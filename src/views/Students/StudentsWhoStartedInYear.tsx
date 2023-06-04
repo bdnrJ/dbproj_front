@@ -10,7 +10,8 @@ const Students = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/students');
+        const response = await axios.get('http://localhost:8080/api/students/started/2023');
+        console.log(response);
         setStudents(response.data);
       } catch (err) {
         console.error('Error fetching students:', err);
