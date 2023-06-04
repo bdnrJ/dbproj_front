@@ -36,8 +36,8 @@ const Students = () => {
                 <AddStudent />
             </Popup>
 <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
-<div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
-<ul className="space-y-2">
+        <div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
+        <ul className="space-y-2">
 
         
 <li>
