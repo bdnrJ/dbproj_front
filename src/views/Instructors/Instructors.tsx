@@ -1,6 +1,6 @@
 import React from 'react'
-import Popup from '../components/Popup'
-import AddInstructor from '../Formy/AddInstructor'
+import Popup from '../../components/Popup'
+import AddInstructor from '../../Formy/AddInstructor'
 
 const Instructors = () => {
     return (

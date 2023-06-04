@@ -1,6 +1,6 @@
 import React from 'react'
-import Popup from '../components/Popup'
-import AddCourse from '../Formy/AddCourse'
+import Popup from '../../components/Popup'
+import AddCourse from '../../Formy/AddCourse'
 
 const Courses = () => {
     return (
