@@ -16,6 +16,8 @@ import Assigned from './views/Vehicles/Assigned';
 import Maintenance from './views/Vehicles/Maintenance';
 import CoursesMaxLesson from './views/Courser/CoursesMaxLesson';
 import CourseTodayLesson from './views/Courser/CourseTodayLesson';
+import InstructorsBirthday from './views/Instructors/InstructorsBirthday';
+import InstructorsMaxLesson from './views/Instructors/InstructorsMaxLesson';
 export const Layout = () => {
     return (
         <div className="layout">
@@ -74,6 +76,16 @@ const router = createBrowserRouter([
             {
                 path: "/instructors",
                 element: <Instructors />
+
+            },
+            {
+                path: "/InstructorsBirthday",
+                element: <InstructorsBirthday />
+
+            },
+            {
+                path: "/InstructorsMaxLesson",
+                element: <InstructorsMaxLesson />
 
             },
         ]
