@@ -12,6 +12,8 @@ import Courses from './views/Courses';
 import Instructors from './views/Instructors';
 import Todaylesson from './views/Todaylesson';
 import StudentsWhoStartedInYear from './views/StudentsWhoStartedInYear';
+import Assigned from './views/Assigned';
+import Maintenance from './views/Maintenance';
 export const Layout = () => {
     return (
         <div className="layout">
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
             {
                 path: "/StudentsWhoStartedInYear",
                 element: <StudentsWhoStartedInYear />
+            },
+            {
+                path: "/Assigned",
+                element: <Assigned />
+            },
+            {
+                path: "/Maintenance",
+                element: <Maintenance />
             },
             {
                 path: "/vehicles",

@@ -1,28 +1,30 @@
-import React, {useState, useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import Popup from '../components/Popup'
-import AddStudent from '../Formy/AddStudent'
+import AddVehicle from '../Formy/AddVehicle'
 import axios from 'axios';
+const Vehicles = () => {
+
+    const [vehicles, setVehicles] = useState([]);
+
+    useEffect(() => {
+        const fetchVehicles = async () => {
+          try {
+            const response = await axios.get('http://localhost:8080/api/vehicles/mintenance');
+            setVehicles(response.data);
+          } catch (err) {
+            console.error('Error fetching students:', err);
+          }
+        };
+    
+        fetchVehicles();
+    }, []);
 
 
-const Students = () => {
+    return (
+        <div>
 
-  const [students, setStudents] = useState([]);
 
-  useEffect(() => {
-    const fetchStudents = async () => {
-      try {
-        const response = await axios.get('http://localhost:8080/api/students');
-        setStudents(response.data);
-      } catch (err) {
-        console.error('Error fetching students:', err);
-      }
-    };
-
-    fetchStudents();
-  }, []);
-
-  return (
-<section className="min-h-screen bg-slate-800 font-sans text-center">
+            <section className="min-h-screen bg-slate-800 font-sans text-center">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
 
 <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -34,29 +36,29 @@ const Students = () => {
 
 <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
 <div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
-<ul className="space-y-2">
+    <ul className="space-y-2">
         <li>
-          <Popup buttonText="Add Vehicle">
-                <AddStudent />
+        <Popup buttonText="Add Vehicle">
+                <AddVehicle />
             </Popup>
         </li>
         <li>
-            <a href="/Students" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/Vehicles" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">today lesson</span>
+                <span className="ml-3">Vehicles</span>
             </a>
         </li>
         <li>
-            <a href="/Todaylesson" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/Maintenance" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">today lesson</span>
+                <span className="ml-3">Maintenance</span>
             </a>
         </li>
 
         <li>
-            <a href="/StudentsWhoStartedInYear" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/Assigned" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <svg aria-hidden="true" className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
-                <span className="ml-3">StudentsWhoStartedInYear</span>
+                <span className="ml-3">Assigned</span>
             </a>
         </li>
 
@@ -81,16 +83,7 @@ const Students = () => {
             </tr>
           </thead>
           <tbody>
-          {students.map((student, index) => (
-                  <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                    <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{student.email}</td>
-                    <td className="px-6 py-4">{student.firstName}</td>
-                    <td className="px-6 py-4">{student.lastName}</td>
-                    <td className="px-6 py-4">{student.dateOfBirth}</td>
-                    <td className="px-6 py-4">{student.phoneNumber}</td>
-                    <td className="px-6 py-4">{student.address}</td>
-                  </tr>
-                ))}
+         
           </tbody>
         </table>
       </div>
@@ -100,8 +93,8 @@ const Students = () => {
 
 
 </section>
-
-  )
+        </div>
+    )
 }
 
-export default Students
+export default Vehicles
