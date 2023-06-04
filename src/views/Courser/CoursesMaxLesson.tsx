@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Popup from '../../components/Popup'
 import AddCourse from '../../Formy/AddCourse'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 const Courses = () => {
+
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+      const fetchCourses = async () => {
+        try {
+          const response = await axios.get('http://localhost:8080/api/courses/max_lessons');
+          setCourses(response.data);
+        } catch (err) {
+          console.error('Error fetching students:', err);
+        }
+      };
+      fetchCourses();
+      }, []);
     return (
                 <div>
 
@@ -70,16 +85,23 @@ const Courses = () => {
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-        <th scope="col" className="px-6 py-3">Email</th>
-            <th scope="col" className="px-6 py-3">First Name</th>
+        <th scope="col" className="px-6 py-3">course description</th>
+            <th scope="col" className="px-6 py-3">course duration</th>
             <th scope="col" className="px-6 py-3">Last Name</th>
-            <th scope="col" className="px-6 py-3">Date of Birth</th>
+            <th scope="col" className="px-6 py-3">course fee </th>
             <th scope="col" className="px-6 py-3">Phone Number</th>
-            <th scope="col" className="px-6 py-3">Address</th>
-        </tr>
+            <th scope="col" className="px-6 py-3">course name</th>
+      </tr>
         </thead>
         <tbody>
-
+        {courses.map((courses, index) => (
+                  <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{courses.course_description}</td>
+                    <td className="px-6 py-4">{courses.course_duration}</td>
+                    <td className="px-6 py-4">{courses.course_fee}</td>
+                    <td className="px-6 py-4">{courses.course_name}</td>
+                  </tr>
+                ))}
         </tbody>
         </table>
         </div>
