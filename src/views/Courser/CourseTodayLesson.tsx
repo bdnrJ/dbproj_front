@@ -19,13 +19,15 @@ const Courses = () => {
         </svg>
         </button>
 
+        <Popup buttonText="Add Course">
+                        <AddCourse />
+                    </Popup>
+
         <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidenav">
         <div className="overflow-y-auto py-5 px-3 h-full  border-r  bg-gray-800 border-gray-700">
         <ul className="space-y-2">
         <li>
-                    <Popup buttonText="Add Course">
-                        <AddCourse />
-                    </Popup>
+                
         </li>
         <li>
         <a href="/Courses" className="flex items-center p-2 text-base font-normal text-blue-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
