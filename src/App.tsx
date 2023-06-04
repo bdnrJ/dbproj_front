@@ -8,14 +8,14 @@ import { Outlet } from 'react-router-dom';
 import Home from './views/Home';
 import Students from './views/Students/Students';
 import Vehicles from './views/Vehicles/Vehicles';
-import Courses from './views/Courses';
-import Instructors from './views/Instructors';
+import Courses from './views/Courser/Courses';
+import Instructors from './views/Instructors/Instructors';
 import Todaylesson from './views/Students/Todaylesson';
 import StudentsWhoStartedInYear from './views/Students/StudentsWhoStartedInYear';
 import Assigned from './views/Vehicles/Assigned';
 import Maintenance from './views/Vehicles/Maintenance';
-import CoursesMaxLesson from './views/CoursesMaxLesson';
-import CourseTodayLesson from './views/CourseTodayLesson';
+import CoursesMaxLesson from './views/Courser/CoursesMaxLesson';
+import CourseTodayLesson from './views/Courser/CourseTodayLesson';
 export const Layout = () => {
     return (
         <div className="layout">
