@@ -85,7 +85,7 @@ const AddStudent: React.FC<Props> = ({ }) => {
                     <input id="startDate" type="date" className={`block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner ${errors.startDate && "border-red-500"}`} {...register('startDate', { required: true })} />
                     {errors.startDate && <span className="text-red-500 text-xs">{errors.startDate.message}</span>}
 
-                    <button type="submit" disabled={disabled} className="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                    <button type="submit" disabled={disabled} className="w-full py-3 mt-6 text-white bg-gray-800 uppercase shadow-lg focus:outline-none hover:bg-gray-400 hover:shadow-none">
                         Add Student
                     </button>
                 </form>
